@@ -1,0 +1,4 @@
+.not-found { min-height: 60vh; display: flex; align-items: center; }
+.not-found__inner { text-align: center; max-width: 30rem; margin-inline: auto; }
+.not-found h1 { font-size: var(--step-3); margin-top: var(--space-xs); }
+.not-found__body { margin: var(--space-sm) 0 var(--space-lg); color: var(--charcoal); }

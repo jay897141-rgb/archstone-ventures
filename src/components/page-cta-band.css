@@ -1,0 +1,28 @@
+.page-cta-band { background: var(--ink); color: var(--white); text-align: center; }
+.page-cta-band__inner { display: flex; flex-direction: column; align-items: center; }
+.page-cta-band h2 { color: var(--white); font-size: var(--step-3); font-weight: 400; max-width: 26ch; }
+.page-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); margin-top: var(--space-lg); }
+
+/* Same fix as Hero: this section has a dark background but isn't wrapped
+   in .section--dark, so the ghost button needs its own on-dark colors or
+   it renders near-invisible (dark text/border on a dark background). */
+.page-cta-band .btn-ghost {
+  color: var(--white);
+  border-color: color-mix(in srgb, var(--white) 42%, transparent);
+}
+.page-cta-band .btn-ghost:hover {
+  background: var(--white);
+  color: var(--ink);
+}
+
+/* Match the brass-on-dark primary treatment used by .section--dark
+   elsewhere, for consistent CTA contrast and hierarchy site-wide. */
+.page-cta-band .btn-primary {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--ink);
+}
+.page-cta-band .btn-primary:hover {
+  background: var(--brass-light);
+  border-color: var(--brass-light);
+}

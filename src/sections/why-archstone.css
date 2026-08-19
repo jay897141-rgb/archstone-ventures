@@ -1,0 +1,20 @@
+.why-archstone__heading { font-size: var(--step-3); font-weight: 400; max-width: 24ch; margin-top: var(--space-xs); }
+
+.why-archstone__grid {
+  margin-top: var(--space-xl);
+  display: grid;
+  gap: var(--space-lg) var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+.why-archstone__card { border-top: 1px solid var(--line); padding-top: var(--space-sm); }
+.why-archstone__n { font-family: var(--font-mono); font-size: 0.8rem; color: var(--brass); }
+.why-archstone__card h3 { font-size: var(--step-1); font-family: var(--font-body); font-weight: 600; margin-top: 0.5rem; }
+.why-archstone__card p { margin: 0.5rem 0 0; color: var(--charcoal); font-size: 0.92rem; }
+
+@media (min-width: 700px) {
+  .why-archstone__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1080px) {
+  .why-archstone__grid { grid-template-columns: repeat(3, 1fr); }
+}

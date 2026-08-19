@@ -1,0 +1,32 @@
+.process-page {
+  position: relative;
+  background-image:
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--brass) 7%, transparent) 0px, color-mix(in srgb, var(--brass) 7%, transparent) 1px, transparent 1px, transparent 64px),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--brass) 7%, transparent) 0px, color-mix(in srgb, var(--brass) 7%, transparent) 1px, transparent 1px, transparent 64px);
+  background-position: 0 0;
+}
+
+.process-page__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 46rem;
+}
+
+.process-page__item {
+  display: flex;
+  gap: var(--space-lg);
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--line);
+}
+.process-page__item:last-child { border-bottom: 1px solid var(--line); }
+
+.process-page__n {
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  color: var(--brass);
+  flex-shrink: 0;
+  width: 2.4rem;
+}
+
+.process-page__body h2 { font-family: var(--font-body); font-weight: 600; font-size: var(--step-2); }
+.process-page__body p { margin-top: var(--space-xs); color: var(--charcoal); max-width: 40ch; }

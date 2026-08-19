@@ -1,0 +1,83 @@
+.construction-hero {
+  padding-top: calc(var(--space-2xl) + 2rem);
+  padding-bottom: var(--space-xl);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.construction-hero__grid,
+.construction-philosophy__grid,
+.construction-execution__grid,
+.construction-transparency__inner { display: grid; gap: var(--space-xl); align-items: center; }
+.construction-hero__copy h1 { max-width: 11ch; font-size: var(--step-5); line-height: 0.95; }
+.construction-hero__copy h1 em,
+.construction-philosophy h2 em,
+.construction-transparency h2 em,
+.construction-model h2 em { color: var(--brass-deep); font-style: normal; }
+.construction-hero__copy > p:not(.eyebrow) { max-width: 35rem; margin-top: var(--space-md); font-size: var(--step-1); color: var(--charcoal); }
+.construction-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg); }
+.construction-hero__media .img-placeholder { background-color: var(--limestone-deep); }
+
+.construction-philosophy h2,
+.construction-controls h2,
+.construction-journey h2,
+.construction-execution h2,
+.construction-model h2 { font-size: var(--step-4); font-weight: 400; }
+.construction-philosophy__copy p,
+.construction-execution__copy > p:last-child,
+.construction-transparency__copy p { max-width: 34rem; color: var(--charcoal); font-size: var(--step-1); }
+.construction-philosophy__rule { display: block; width: 5rem; height: 1px; margin-top: var(--space-lg); background: var(--brass); }
+
+.construction-journey { background: var(--limestone); }
+.construction-journey__timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 var(--space-md); margin-top: var(--space-xl); border-top: 1px solid var(--line); }
+.construction-stage { min-height: 8rem; padding: var(--space-sm) 0; border-bottom: 1px solid var(--line); }
+.construction-stage span,
+.construction-control__mark,
+.construction-model__stage span { color: var(--brass-deep); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; }
+.construction-stage h3 { max-width: 16ch; margin-top: var(--space-sm); font-family: var(--font-body); font-size: var(--step-0); font-weight: 600; }
+
+.construction-controls__heading { max-width: 44rem; }
+.construction-controls__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg) var(--space-md); margin-top: var(--space-xl); }
+.construction-control { display: grid; grid-template-columns: 2.25rem 1fr; gap: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--line); }
+.construction-control h3 { font-family: var(--font-body); font-size: var(--step-0); font-weight: 600; }
+.construction-control p { margin-top: 0.45rem; color: var(--charcoal); font-size: 0.92rem; }
+.construction-control__mark { width: 1.8rem; height: 1.8rem; padding-top: 0.35rem; border: 1px solid var(--brass); text-align: center; }
+
+.construction-execution { padding-block: var(--space-2xl); background: var(--limestone-deep); }
+.construction-execution__media .img-placeholder { background-color: var(--paper); }
+.construction-execution__copy { max-width: 34rem; }
+.construction-execution__copy h2 { margin-top: var(--space-sm); }
+
+.construction-transparency { background: var(--ink); color: var(--white); }
+.construction-transparency h2 { color: var(--white); }
+.construction-transparency .eyebrow { color: var(--brass-light); }
+.construction-transparency .eyebrow::after { background: var(--line-dark); }
+.construction-transparency__copy p { color: rgba(255, 255, 255, 0.76); }
+
+.construction-model__flow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: var(--space-xl); border-top: 1px solid var(--line); }
+.construction-model__stage { position: relative; padding: var(--space-md) var(--space-sm) 0 0; }
+.construction-model__stage + .construction-model__stage { padding-left: var(--space-md); border-left: 1px solid var(--line); }
+.construction-model__stage strong { display: block; margin-top: var(--space-sm); font-family: var(--font-display); font-size: var(--step-2); font-weight: 400; }
+.construction-model__stage i { position: absolute; top: 2.7rem; right: -0.5rem; z-index: 1; padding: 0 0.2rem; background: var(--paper); color: var(--brass-deep); font-style: normal; }
+
+@media (min-width: 900px) {
+  .construction-hero__grid { grid-template-columns: 1.05fr 0.95fr; }
+  .construction-philosophy__grid { grid-template-columns: 1.2fr 0.8fr; }
+  .construction-execution__grid { grid-template-columns: 1.35fr 0.65fr; }
+  .construction-transparency__inner { grid-template-columns: 1.2fr 0.8fr; }
+}
+
+@media (max-width: 760px) {
+  .construction-journey__timeline { grid-template-columns: repeat(2, 1fr); }
+  .construction-controls__list { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .construction-hero__actions { flex-direction: column; align-items: flex-start; }
+  .construction-journey__timeline,
+  .construction-controls__list,
+  .construction-model__flow { grid-template-columns: 1fr; }
+  .construction-stage { min-height: 0; }
+  .construction-model__stage + .construction-model__stage { padding-left: var(--space-sm); border-left: 0; border-top: 1px solid var(--line); }
+  .construction-model__stage i { display: none; }
+}

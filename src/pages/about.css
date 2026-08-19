@@ -1,0 +1,21 @@
+.about-approach__grid { display: grid; gap: var(--space-lg); align-items: center; }
+.about-approach__heading { font-size: var(--step-3); font-weight: 400; margin-top: var(--space-xs); max-width: 22ch; }
+.about-approach__body { margin-top: var(--space-sm); max-width: 34rem; color: var(--charcoal); }
+
+.about-philosophy__grid { max-width: 44rem; }
+.about-philosophy__heading { font-size: var(--step-3); font-weight: 400; margin-top: var(--space-xs); }
+.about-philosophy__body { margin-top: var(--space-sm); color: var(--charcoal); }
+
+.about-values__heading { font-size: var(--step-3); font-weight: 400; margin-top: var(--space-xs); }
+.about-values__grid { margin-top: var(--space-xl); display: grid; gap: var(--space-lg) var(--space-md); grid-template-columns: 1fr; }
+.about-values__item { border-top: 1px solid var(--line); padding-top: var(--space-sm); }
+.about-values__item h3 { font-family: var(--font-display); font-size: var(--step-2); font-weight: 500; }
+.about-values__item p { margin-top: 0.5rem; color: var(--charcoal); max-width: 30ch; }
+
+.about-vision__inner { text-align: center; max-width: 40rem; margin-inline: auto; }
+.about-vision h2 { font-size: var(--step-3); font-weight: 400; margin-top: var(--space-xs); }
+
+@media (min-width: 900px) {
+  .about-approach__grid { grid-template-columns: 0.9fr 1.1fr; }
+  .about-values__grid { grid-template-columns: repeat(4, 1fr); }
+}

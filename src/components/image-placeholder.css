@@ -1,0 +1,19 @@
+.img-placeholder {
+  position: relative;
+  width: 100%;
+  background-color: var(--limestone-deep);
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--ink) 8%, transparent) 0px,
+    color-mix(in srgb, var(--ink) 8%, transparent) 1px,
+    transparent 1px,
+    transparent 11px
+  );
+  overflow: hidden;
+}
+
+.img-placeholder__tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}

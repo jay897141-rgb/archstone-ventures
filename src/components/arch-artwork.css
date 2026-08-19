@@ -1,0 +1,31 @@
+.arch-artwork {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--limestone-deep);
+}
+
+.arch-artwork__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s var(--ease-signature);
+}
+
+.arch-artwork__tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+/* Consumers opt into hover motion via .arch-artwork--hover on a parent
+   (e.g. project/world tiles) so plain informational uses stay static. */
+.arch-artwork--hover:hover .arch-artwork__svg,
+a:hover > .arch-artwork .arch-artwork__svg {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arch-artwork__svg { transition: none; }
+}

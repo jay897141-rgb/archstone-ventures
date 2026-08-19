@@ -1,0 +1,51 @@
+.process-timeline {
+  background-image:
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--limestone) 4%, transparent) 0px, color-mix(in srgb, var(--limestone) 4%, transparent) 1px, transparent 1px, transparent 64px),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--limestone) 4%, transparent) 0px, color-mix(in srgb, var(--limestone) 4%, transparent) 1px, transparent 1px, transparent 64px);
+}
+
+.process-timeline__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+.process-timeline__head h2 { max-width: 22ch; font-size: var(--step-3); font-weight: 400; margin-top: var(--space-xs); }
+
+.process-timeline__spine {
+  position: relative;
+  padding-left: var(--space-md);
+  border-left: 1px solid var(--line-dark);
+}
+
+.process-timeline__spine li {
+  position: relative;
+  display: flex;
+  gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+}
+.process-timeline__spine li::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-md) - 1px);
+  top: 0.4em;
+  width: var(--space-md);
+  height: 1px;
+  background: var(--line-dark);
+}
+.process-timeline__spine li:last-child { padding-bottom: 0; }
+
+.process-timeline__n {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--brass-light);
+  flex-shrink: 0;
+  width: 2rem;
+}
+
+.process-timeline__body h3 { color: var(--white); font-size: var(--step-1); font-family: var(--font-body); font-weight: 600; }
+.process-timeline__body p { margin: 0.4rem 0 0; max-width: 46ch; color: color-mix(in srgb, var(--limestone) 78%, transparent); }
+
+@media (min-width: 900px) {
+  .process-timeline__head { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+}

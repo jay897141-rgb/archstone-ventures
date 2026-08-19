@@ -1,0 +1,25 @@
+.page-hero {
+  padding-top: calc(var(--space-2xl) + 2rem);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-sm) var(--space-md);
+  margin-top: var(--space-xs);
+}
+
+.page-hero__title {
+  font-size: var(--step-4);
+  max-width: 20ch;
+}
+
+.page-hero__sub {
+  margin-top: var(--space-sm);
+  max-width: 40rem;
+  font-size: var(--step-1);
+  color: var(--charcoal);
+}

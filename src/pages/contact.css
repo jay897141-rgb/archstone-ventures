@@ -1,0 +1,18 @@
+.contact-page__grid { display: grid; gap: var(--space-lg); }
+
+.contact-page__details { display: flex; flex-direction: column; gap: var(--space-lg); }
+.contact-page__block h3 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass-deep);
+  margin-bottom: 0.5rem;
+}
+.contact-page__block a, .contact-page__block p { display: block; font-size: var(--step-0); margin: 0; }
+.contact-page__social { display: flex; gap: var(--space-sm); }
+.contact-page__map { margin-top: var(--space-sm); }
+
+@media (min-width: 900px) {
+  .contact-page__grid { grid-template-columns: 0.8fr 1.2fr; }
+}

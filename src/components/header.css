@@ -1,0 +1,504 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.35s var(--ease-signature),
+    border-color 0.35s var(--ease-signature),
+    box-shadow 0.35s var(--ease-signature);
+}
+
+.site-header.is-scrolled {
+  background: color-mix(in srgb, var(--limestone) 97%, transparent);
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 24px -16px color-mix(in srgb, var(--ink) 25%, transparent);
+}
+
+/* =========================================================
+   HEADER ROW
+   ========================================================= */
+
+.site-header__row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--header-h);
+  gap: clamp(0.75rem, 1.5vw, 1.75rem);
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.site-header__mark {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-right: auto;
+  min-width: 0;
+  line-height: 1;
+}
+
+.site-header__icon-img {
+  display: block;
+  width: 2.9rem;
+  height: 2.9rem;
+  object-fit: contain;
+  flex: 0 0 auto;
+
+  /* IMPORTANT:
+     prevents strange ghost/duplicate logo appearance */
+  mix-blend-mode: normal;
+}
+
+.site-header__wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.site-header__mark-main {
+  font-family: var(--font-display);
+  font-size: clamp(0.84rem, 1vw, 1.08rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.site-header__mark-sub {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  color: var(--brass);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.site-header__nav {
+  display: none;
+  align-items: center;
+  gap: clamp(0.15rem, 0.45vw, 0.65rem);
+  min-width: 0;
+}
+
+.site-header__link {
+  position: relative;
+  padding: 0.3rem clamp(0.2rem, 0.45vw, 0.55rem);
+
+  font-size: clamp(0.72rem, 0.68rem + 0.16vw, 0.86rem);
+  color: var(--charcoal);
+
+  white-space: nowrap;
+}
+
+.site-header__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+
+  height: 1px;
+  background: var(--brass);
+
+  transition: right 0.25s var(--ease-signature);
+}
+
+.site-header__link:hover::after,
+.site-header__link.is-active::after {
+  right: 0;
+}
+
+.site-header__link.is-active {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* =========================================================
+   CLIENT LOGIN
+   ========================================================= */
+
+.site-header__actions {
+  display: none;
+  align-items: center;
+  margin-left: auto;
+}
+
+.site-header__login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.65rem 0.95rem;
+
+  border: 1px solid var(--brass);
+
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--charcoal);
+
+  white-space: nowrap;
+
+  transition:
+    background 0.22s var(--ease-signature),
+    color 0.22s var(--ease-signature),
+    transform 0.22s var(--ease-signature);
+}
+
+.site-header__login svg {
+  width: 1rem;
+  height: 1rem;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+}
+
+.site-header__login:hover {
+  background: var(--brass);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   BURGER
+   ========================================================= */
+
+.site-header__burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding: 8px;
+  margin-right: -8px;
+
+  border: 0;
+  background: transparent;
+}
+
+.site-header__burger span {
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+
+  transition:
+    transform 0.25s var(--ease-signature),
+    opacity 0.25s var(--ease-signature);
+}
+
+/* =========================================================
+   MOBILE NAV
+   ========================================================= */
+
+.mobile-nav {
+  position: fixed;
+  inset: var(--header-h) 0 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: var(--space-lg) var(--container-pad);
+
+  background: var(--limestone);
+
+  transform: translateY(-8px);
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.3s var(--ease-signature),
+    transform 0.3s var(--ease-signature),
+    visibility 0.3s;
+}
+
+.mobile-nav.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav__link {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+
+  padding-block: var(--space-xs);
+
+  border-bottom: 1px solid var(--line);
+
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  color: var(--ink);
+}
+
+.mobile-nav__index {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--brass);
+}
+
+.mobile-nav__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: var(--space-md);
+}
+
+.mobile-nav__login {
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* =========================================================
+   DESKTOP HOME HEADER
+   ========================================================= */
+
+@media (min-width: 1080px) {
+  .site-header__nav,
+  .site-header__actions {
+    display: flex;
+  }
+
+  .site-header__burger {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  /*
+   * HOME PAGE:
+   * Header floats DIRECTLY on the drone video.
+   * No white strip.
+   * No black strip.
+   * No glass panel.
+   * No backdrop blur.
+   */
+  .site-header--home,
+  .site-header--home:not(.is-scrolled),
+  .site-header--home.is-scrolled {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: transparent;
+    background-image: none;
+
+    border: 0;
+    border-bottom: 0;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .site-header__row {
+    height: 96px;
+  }
+
+  /* ---------- Brand ---------- */
+
+  .site-header--home .site-header__mark {
+    gap: 0.8rem;
+  }
+
+  .site-header--home .site-header__icon-img {
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+    mix-blend-mode: normal;
+
+    filter:
+      drop-shadow(0 3px 8px rgba(0, 0, 0, 0.35))
+      drop-shadow(0 8px 20px rgba(0, 0, 0, 0.22));
+  }
+
+  .site-header--home .site-header__wordmark {
+    gap: 0.32rem;
+  }
+
+  .site-header--home .site-header__mark-main {
+    color: #fff;
+
+    font-size: 1.03rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+
+    text-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.8),
+      0 5px 18px rgba(0, 0, 0, 0.45);
+  }
+
+  .site-header--home .site-header__mark-sub {
+    color: var(--brass);
+
+    font-size: 0.5rem;
+    letter-spacing: 0.22em;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  /* ---------- Navigation ---------- */
+
+  .site-header--home .site-header__nav {
+    gap: clamp(0.15rem, 0.5vw, 0.65rem);
+  }
+
+  .site-header--home .site-header__link {
+    color: rgba(255, 255, 255, 0.94);
+
+    font-size: 0.84rem;
+    font-weight: 400;
+
+    padding: 0.4rem 0.42rem;
+
+    text-shadow:
+      0 2px 7px rgba(0, 0, 0, 0.8),
+      0 4px 14px rgba(0, 0, 0, 0.35);
+  }
+
+  .site-header--home .site-header__link:hover,
+  .site-header--home .site-header__link.is-active {
+    color: #fff;
+  }
+
+  /* ---------- Client login ---------- */
+
+  .site-header--home .site-header__login {
+    color: #fff;
+
+    border-color: color-mix(
+      in srgb,
+      var(--brass) 88%,
+      transparent
+    );
+
+    background: rgba(0, 0, 0, 0.12);
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+  }
+
+  .site-header--home .site-header__login:hover {
+    background: var(--brass);
+    color: #111;
+    text-shadow: none;
+  }
+
+  /* ---------- Intro animation ---------- */
+
+  .site-header__mark,
+  .site-header__nav,
+  .site-header__actions {
+    animation: header-brand-in 0.75s var(--ease-signature) both;
+  }
+
+  .site-header__nav {
+    animation-delay: 0.08s;
+  }
+
+  .site-header__actions {
+    animation-delay: 0.16s;
+  }
+}
+
+/* =========================================================
+   SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1180px) and (min-width: 1080px) {
+  .site-header__row {
+    gap: 0.5rem;
+  }
+
+  .site-header--home .site-header__icon-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-header--home .site-header__mark-main {
+    font-size: 0.76rem;
+  }
+
+  .site-header--home .site-header__mark-sub {
+    font-size: 0.42rem;
+  }
+
+  .site-header--home .site-header__link {
+    font-size: 0.74rem;
+    padding-inline: 0.25rem;
+  }
+
+  .site-header--home .site-header__login {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.72rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .site-header__icon-img {
+    width: 2.45rem;
+    height: 2.45rem;
+  }
+
+  .site-header__mark-main {
+    font-size: 0.75rem;
+    letter-spacing: 0.07em;
+  }
+
+  .site-header__mark-sub {
+    font-size: 0.42rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes header-brand-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__login,
+  .site-header__mark,
+  .site-header__nav,
+  .site-header__actions {
+    transition: none;
+    animation: none;
+  }
+}

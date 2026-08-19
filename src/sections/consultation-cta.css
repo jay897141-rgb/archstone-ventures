@@ -1,0 +1,18 @@
+.consultation-cta { background: var(--brand-white); border-top: 1px solid color-mix(in srgb, var(--brand-gold) 24%, transparent); }
+.consultation-cta__inner { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.consultation-cta__inner .eyebrow { justify-content: center; }
+.consultation-cta__inner .eyebrow::after { display: none; }
+
+.consultation-cta__heading {
+  font-size: var(--step-4);
+  font-weight: 400;
+  margin-top: var(--space-sm);
+}
+
+.consultation-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
